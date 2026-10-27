@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<title>QuoteUs README images</title>
+<!--
+  Source of the banner in profile/assets/. Built from the QuoteUs design system (tokens, qu-card, qu-step).
+  Open it as readme-images.html#banner-<light|dark> to see one theme.
+  Render: see profile/assets/source/render.sh (serves the workspace so the Newsreader files load).
+-->
+<style>
+  @font-face { font-family: "Newsreader"; src: url("../../../../website/public/fonts/Newsreader-Variable.woff2") format("woff2"); font-weight: 200 800; font-style: normal; }
+  @font-face { font-family: "Newsreader"; src: url("../../../../website/public/fonts/Newsreader-Italic-Variable.woff2") format("woff2"); font-weight: 200 800; font-style: italic; }
+
+  :root {
+    --paper: #fbf6f1; --paper-raised: #fffdfa; --paper-sunk: #f2e9e1;
+    --ink: #2a1d1c; --ink-muted: #6b5753; --line: #e7dad1;
+    --oxblood: #683c3c; --on-oxblood: #fddfdf;
+    --oxblood-soft: #fddfdf; --on-oxblood-soft: #683c3c;
+    --marigold: #e9a83b; --on-marigold: #2a1d1c; --marigold-soft: #fbebcb; --marigold-ink: #8a5a0b;
+    --logo-oxblood: #683c3c; --logo-blush: #fddfdf;
+    --shadow-card: 0 1px 2px rgba(42,29,28,0.05), 0 6px 18px rgba(42,29,28,0.06);
+    --shadow-lift: 0 2px 6px rgba(42,29,28,0.08), 0 18px 40px rgba(42,29,28,0.14);
+    --serif: "Newsreader", "New York", Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, "Helvetica Neue", sans-serif;
+  }
+  .dark {
+    --paper: #1a1312; --paper-raised: #251b1a; --paper-sunk: #120d0c;
+    --ink: #f6ece6; --ink-muted: #bca7a1; --line: #3a2c2a;
+    --oxblood: #eba9a5; --on-oxblood: #2a1514;
+    --oxblood-soft: #43292a; --on-oxblood-soft: #f7cfcc;
+    --marigold: #f0b95a; --on-marigold: #2a1d1c; --marigold-soft: #3d2e17; --marigold-ink: #f0b95a;
+    --shadow-card: 0 1px 2px rgba(0,0,0,0.45);
+    --shadow-lift: 0 2px 6px rgba(0,0,0,0.5), 0 18px 40px rgba(0,0,0,0.5);
+  }
+
+  * { box-sizing: border-box; }
+  html { zoom: 2; }
+  body { margin: 0; font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+  section { position: relative; width: 1280px; overflow: hidden; background: var(--paper); color: var(--ink); padding: 64px 72px; }
+  p, h1, figure, blockquote { margin: 0; }
+
+  .logo-dark, .dark .logo-light { display: none !important; }
+  .dark .logo-dark { display: block !important; }
+
+  .eyebrow { font-size: 15px; line-height: 22px; font-weight: 600; color: var(--marigold-ink); margin-bottom: 12px; }
+  .lead { color: var(--ink-muted); max-width: 640px; }
+
+  /* qu-card */
+  .card { background: var(--paper-raised); border: 1px solid var(--line); border-radius: 22px; box-shadow: var(--shadow-card); padding: 24px; color: var(--ink); }
+  .card--blush { background: var(--oxblood-soft); border-color: transparent; color: var(--on-oxblood-soft); }
+  .card--oxblood { background: var(--oxblood); border-color: transparent; color: var(--on-oxblood); }
+  .card__eyebrow { margin: 0 0 12px; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.2px; color: var(--marigold-ink); display: flex; align-items: center; gap: 6px; }
+  .card--blush .card__eyebrow, .card--oxblood .card__eyebrow { color: inherit; }
+  .card__text { font-family: var(--serif); font-size: 24px; line-height: 31px; letter-spacing: -0.1px; font-variation-settings: 'opsz' 36; text-indent: -0.42em; text-wrap: pretty; }
+  .card--md .card__text { font-size: 19px; line-height: 26px; letter-spacing: 0; font-variation-settings: 'opsz' 18; }
+  .card--hero .card__text { font-size: 32px; line-height: 38px; letter-spacing: -0.3px; font-variation-settings: 'opsz' 72; }
+  .card__text mark { background: var(--marigold-soft); color: var(--ink); border-radius: 4px; padding: 0 2px; }
+  .card__by { margin-top: 8px; font-family: var(--serif); font-style: italic; font-size: 16px; line-height: 21px; font-variation-settings: 'opsz' 16; }
+  .card__by span { color: var(--ink-muted); }
+  .card--blush .card__by span, .card--oxblood .card__by span { color: inherit; }
+  .card__foot { display: flex; align-items: center; margin-top: 20px; font-size: 13px; line-height: 18px; color: var(--ink-muted); }
+  .card__foot span { flex: 1; }
+  .card__foot svg { width: 22px; height: 22px; color: var(--oxblood); }
+  .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--marigold); display: inline-block; }
+
+  /* Banner */
+  #banner { height: 560px; display: grid; grid-template-columns: 560px 1fr; gap: 56px; align-items: center; }
+  #banner .wordmark { height: 36px; display: block; margin-bottom: 44px; }
+  #banner h1 { font-family: var(--serif); font-weight: 500; font-size: 64px; line-height: 66px; letter-spacing: -1.4px; font-variation-settings: 'opsz' 72; text-wrap: balance; }
+  #banner .lead { font-size: 19px; line-height: 29px; margin-top: 20px; }
+  #banner .stage { position: relative; height: 432px; }
+  #banner .arch { position: absolute; right: 0; top: 0; bottom: 0; width: 360px; border-radius: 180px 180px 22px 22px; background: var(--oxblood-soft); }
+  #banner .card-a { position: absolute; left: 20px; right: 80px; top: 30px; transform: rotate(-1.5deg); box-shadow: var(--shadow-lift); }
+  #banner .card-b { position: absolute; left: 0; width: 248px; top: 246px; transform: rotate(1.5deg); background: var(--paper-raised); border: 1px solid var(--line); color: var(--ink); box-shadow: var(--shadow-lift); }
+  #banner .card-c { position: absolute; right: 0; width: 256px; top: 262px; transform: rotate(-2deg); box-shadow: var(--shadow-lift); }
+
+</style>
+</head>
+<body>
+
+<!-- Banner: what QuoteUs is -->
+<section id="banner">
+  <div>
+    <img class="wordmark logo-light" src="../../../../website/public/logos/quoteus-wordmark-oxblood.svg" alt="QuoteUs">
+    <img class="wordmark logo-dark" src="../../../../website/public/logos/quoteus-wordmark-blush.svg" alt="QuoteUs">
+    <p class="eyebrow">Nu in bèta voor iPhone</p>
+    <h1>Wat jullie zeggen, bewaard.</h1>
+    <p class="lead">Het quoteboek van je studentenhuis, je vriendengroep of je familie. Leg vast wat er gezegd wordt, koppel het aan wie het zei en deel het alleen met de mensen die erbij waren.</p>
+  </div>
+  <div class="stage">
+    <div class="arch"></div>
+    <figure class="card card--hero card-a">
+      <blockquote class="card__text">“Ik ben niet verdwaald, ik maak een <mark>rondrit.</mark>”</blockquote>
+      <figcaption class="card__by">— Bram<span>, op de A28</span></figcaption>
+      <div class="card__foot"><span>12 okt. · Bewaard door Sanne</span><svg viewBox="0 0 24 24"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z" fill="currentColor"/></svg></div>
+    </figure>
+    <figure class="card card--md card-b">
+      <blockquote class="card__text">“Technisch gezien is worteltaart groente.”</blockquote>
+      <figcaption class="card__by">— Mila<span>, bij het zondagsontbijt</span></figcaption>
+    </figure>
+    <figure class="card card--md card--oxblood card-c">
+      <p class="card__eyebrow"><span class="dot"></span>Quote van de week</p>
+      <blockquote class="card__text">“Wie heeft de soep in de vaatwasser gezet?”</blockquote>
+      <figcaption class="card__by">— Oma Jet</figcaption>
+    </figure>
+  </div>
+</section>
+
+<script>
+  // #banner-dark renders the dark theme.
+  if (location.hash.endsWith('-dark')) document.body.classList.add('dark');
+</script>
+</body>
+</html>
